@@ -20,10 +20,11 @@ function harperSaveMessage(message, username, room) {
 
   var config = {
     method: 'post',
+    maxBodyLength: Infinity,
     url: dbUrl,
     headers: {
       'Content-Type': 'application/json',
-      Authorization: dbPw,
+      'Authorization': `Basic ${dbPw}`,
     },
     data: data,
   };
